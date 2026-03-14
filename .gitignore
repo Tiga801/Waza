@@ -1,0 +1,16 @@
+# AI Assistant Configuration
+.claude/settings.local.json
+
+# macOS
+.DS_Store
+
+# Node
+node_modules/
+npm-debug.log*
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~

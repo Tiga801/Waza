@@ -2,6 +2,7 @@
 name: health
 description: Audit Claude Code config drift and collaboration issues.
 version: "1.5.0"
+disable-model-invocation: true
 ---
 
 # Claude Code Configuration Health Audit
