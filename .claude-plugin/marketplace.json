@@ -10,7 +10,7 @@
     {
       "name": "health",
       "description": "Audit Claude Code configuration health across all layers. Install into Claude Code and run when collaboration feels off.",
-      "version": "1.5.1",
+      "version": "1.5.2",
       "category": "development",
       "source": "./skills/health",
       "homepage": "https://github.com/tw93/claude-health"

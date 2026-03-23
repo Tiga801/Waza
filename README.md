@@ -45,6 +45,7 @@ The skill automatically detects your project tier (Simple / Standard / Complex) 
 
 - `Unknown skill: health`: install to Claude Code explicitly with `-a claude-code`. Use `-g` if you want the skill available in every project. Restart Claude Code after installation.
 - Installer summary shows `./.agents/skills/health`: that summary is generic. For Claude Code, the installed path should end up at `./.claude/skills/health` or `~/.claude/skills/health`.
+- Claude Code currently mishandles `disable-model-invocation` for plugin skills. When that flag is set, explicit user invocation can fail with `Skill health cannot be used with Skill tool due to disable-model-invocation`. `health` does not use that flag for now so `/health` and explicit requests keep working.
 - Scope: this repository targets Claude Code only. Codex and OpenClaw are not supported here.
 
 ## What Gets Checked

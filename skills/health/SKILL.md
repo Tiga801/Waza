@@ -1,7 +1,6 @@
 ---
 name: health
 description: Run when Claude feels off, ignores rules, or hooks/MCP need auditing.
-disable-model-invocation: true
 ---
 
 # Claude Code Configuration Health Audit
@@ -103,7 +102,21 @@ print('=== allowedTools count ===')
 print(len(d.get('permissions', {}).get('allow', [])))
 " 2>/dev/null || echo "(unavailable)"
 echo "=== NESTED CLAUDE.md ===" ; find "$P" -maxdepth 4 -name "CLAUDE.md" -not -path "$P/CLAUDE.md" -not -path "*/.git/*" -not -path "*/node_modules/*" 2>/dev/null || echo "(none)"
-echo "=== GITIGNORE ===" ; (grep -qE "settings\.local" "$P/.gitignore" "$P/.claude/.gitignore" 2>/dev/null && echo "settings.local.json: gitignored") || echo "settings.local.json: NOT gitignored -- risk of committing tokens/credentials"
+echo "=== GITIGNORE ==="
+_GITIGNORE_HIT=$(git -C "$P" check-ignore -v .claude/settings.local.json 2>/dev/null || true)
+if [ -n "$_GITIGNORE_HIT" ]; then
+  _GITIGNORE_SOURCE=${_GITIGNORE_HIT%%:*}
+  case "$_GITIGNORE_SOURCE" in
+    .gitignore|.claude/.gitignore)
+      echo "settings.local.json: gitignored"
+      ;;
+    *)
+      echo "settings.local.json: ignored only by non-project rule ($_GITIGNORE_SOURCE) -- add a repo-local ignore rule"
+      ;;
+  esac
+else
+  echo "settings.local.json: NOT gitignored -- risk of committing tokens/credentials"
+fi
 echo "=== HANDOFF.md ===" ; cat "$P/HANDOFF.md" 2>/dev/null || echo "(none)"
 echo "=== MEMORY.md ===" ; cat "$HOME/.claude/projects/-$(pwd | sed 's|[/_]|-|g; s|^-||')/memory/MEMORY.md" 2>/dev/null | head -50 || echo "(none)"
 
