@@ -12,9 +12,9 @@
 
 ## Why
 
-Waza (技) is a Japanese martial arts term for technique: a move practiced until it becomes instinct. A good engineer thinks through requirements, reviews their own work, debugs systematically, designs interfaces that feel intentional, reads primary sources, writes clearly, and learns new domains by producing output. Waza turns each of these habits into a skill Claude can execute.
+Waza (技) is a Japanese martial arts term for technique: a move practiced until it becomes instinct. Good engineers think before building, verify before shipping, read primary sources, and learn by producing output. Waza turns each of these habits into a skill Claude can execute.
 
-AI makes you faster, but not better:
+AI makes you faster, but not better. The habits that separate good engineers from fast ones are the first to go:
 
 - You stop thinking before building. Prompts feel faster than architecture decisions.
 - You accept the first output. The diff looks fine, so review becomes a formality.
