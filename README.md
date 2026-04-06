@@ -32,8 +32,22 @@ Waza gives each of these habits a [Claude Code skill](https://docs.anthropic.com
 | [`/write`](skills/write) | Writing or editing prose | Rewrites prose to sound natural in Chinese and English. Strips AI writing patterns. |
 | [`/learn`](skills/learn) | Diving into an unfamiliar domain | Six-phase research workflow: collect, digest, outline, fill in, refine, then self-review and publish. |
 | [`/read`](skills/read) | Any URL or PDF | Fetches content as clean Markdown. |
-| [`/english`](skills/english) | Writing English as a non-native speaker | Corrects grammar, explains each mistake, and highlights one pattern to remember. |
 | [`/health`](skills/health) | Auditing Claude Code setup | Checks CLAUDE.md, rules, skills, hooks, MCP, and behavior. Flags issues by severity. |
+
+## English Coaching
+
+Waza includes a passive English coaching template for non-native speakers. When enabled, Claude automatically corrects grammar and phrasing mistakes at the end of every reply, with the pattern name so you understand why.
+
+```
+😇 discuss about → discuss (Redundant preposition)
+😇 I am very interest → I am very interested (Wrong verb form)
+```
+
+The `install.sh` script will ask if you want to add it to your `~/.claude/CLAUDE.md`. You can also add it manually:
+
+```bash
+cat ~/www/waza/templates/english-coaching.md >> ~/.claude/CLAUDE.md
+```
 
 ## Install
 

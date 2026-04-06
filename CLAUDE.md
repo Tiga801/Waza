@@ -13,7 +13,6 @@ Personal skill collection for Claude Code. Nine skills covering the complete eng
 skills/
 ├── check/        -- code review before merging
 ├── design/       -- production-grade frontend UI
-├── english/      -- grammar and phrasing coaching
 ├── health/       -- Claude Code config audit
 │   └── agents/   -- agent1-context.md, agent2-control.md
 ├── hunt/         -- systematic debugging
