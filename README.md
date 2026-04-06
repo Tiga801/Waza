@@ -66,12 +66,6 @@ npx skills add tw93/Waza -a claude-code -s health -y
 
 Replace `health` with any skill name. Requires Node 18+ and Claude Code.
 
-**Local (clone + symlink):**
-
-```bash
-git clone https://github.com/tw93/Waza.git ~/www/waza
-bash ~/www/waza/install.sh
-```
 
 ## Background
 
