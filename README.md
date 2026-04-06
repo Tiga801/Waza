@@ -36,6 +36,21 @@ Each engineering habit gets a [Claude Code skill](https://docs.anthropic.com/en/
 
 Each skill is a folder, not just a markdown file. Skills include reference docs, helper scripts, scoped hooks, and gotchas sections built from real project failures. See Anthropic's [skill best practices](https://x.com/trq212/status/2033949937936085378) for the philosophy behind this structure.
 
+## Statusline
+
+A minimal Claude Code statusline that shows only what matters: context window usage, 5-hour quota, and 7-day quota, each with the time remaining until reset.
+
+<img src="https://gw.alipayobjects.com/zos/k/3a/2Vlazb.png" width="800" />
+
+Color coding: green below 70%, yellow at 70-85%, red above 85% for context; blue, magenta, red for quota thresholds. No progress bars, no noise.
+
+```bash
+# Point Claude Code at the script in ~/.claude/settings.json:
+# "statusLine": { "type": "command", "command": "bash ~/www/waza/scripts/statusline.sh" }
+```
+
+Requires `jq`. No other dependencies.
+
 ## English Coaching
 
 English should be every engineer's first language when working with AI. The model thinks in English, the best resources are in English, and writing clearly in English is a skill that compounds over time.
